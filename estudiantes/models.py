@@ -31,7 +31,7 @@ class Historia(models.Model):
     datos = models.TextField()
 
     def __str__(self):
-        return '{} Historia'.format(self.estudiante.name)
+        return '{} Historia'.format(self.estudiante.nombre)
 
 
 class Tarea(models.Model):
@@ -40,3 +40,6 @@ class Tarea(models.Model):
     fecha_ultima_modificacion = models.DateTimeField(auto_now=True)
     datos = models.TextField()
     completada = models.BooleanField(default=False)
+
+    def __str__(self):
+        return 'Tarea creada para {}'.format(self.estudiante.nombre)
